@@ -73,6 +73,22 @@ internal static class ClienteHelper
             if (!string.IsNullOrEmpty(cpf))
                 cliente.Cpf = cpf;
 
+            ForegroundColor = ConsoleColor.Yellow;
+            WriteLine($"\n Telefone Atual: {cliente.Celular}");
+            ForegroundColor = ConsoleColor.White;
+            Write(" Novo Telefone (XX XXXX-XXXX): ");
+            var celular = ReadLine();
+            if (!string.IsNullOrEmpty(celular))
+                cliente.Celular = celular;
+
+            ForegroundColor = ConsoleColor.Yellow;
+            WriteLine($"\n Email Atual: {cliente.Email}");
+            ForegroundColor = ConsoleColor.White;
+            Write(" Novo Email:  ");
+            var email = ReadLine();
+            if (!string.IsNullOrEmpty(email))
+                cliente.Email = email;
+
             WriteLine("\n Cadastro atualizado com sucesso.");
         }
         MenuHelper.CriarLinha();
